@@ -223,6 +223,7 @@ export default class RichTextEditor extends Component {
                 keyboardType="url"
                 autoCapitalize="none"
                 autoCorrect={false}
+                underlineColorAndroid={"transparent"}
               />
             </View>
             <View style={styles.inputWrapper}>
@@ -232,6 +233,7 @@ export default class RichTextEditor extends Component {
                 style={styles.input}
                 onChangeText={(text) => this.setState({ linkTitle: text })}
                 value={this.state.linkTitle}
+                underlineColorAndroid={"transparent"}
               />
             </View>
             {this._renderModalButtons()}
@@ -661,7 +663,8 @@ const styles = StyleSheet.create({
     color: "#555",
     fontSize: 14,
     height: 32,
-    paddingTop: 0
+    padding: 0,
+    margin: 0
   },
   lineSeparator: {
     height: 1 / PixelRatio.get(),
