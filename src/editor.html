@@ -941,8 +941,7 @@
 					event.preventDefault();
 
 					var text = event.clipboardData.getData('text/plain');
-					var html = convertTextToHtmlWithLineBreaks(text);
-					zss_editor.insertHTML(html);
+					zss_editor.insertHTML(`<pre>${text}</pre>`);
 				});
 			}
 
@@ -1088,7 +1087,7 @@
 
 			zss_editor.setBold = function() {
 				document.execCommand('bold', false, null);
-				zss_editor.enabledEditingItems();
+				zss_editor.enabledEditingItems(); // TODO
 			}
 
 			zss_editor.setItalic = function() {
