@@ -1433,7 +1433,7 @@
 				// Get the contents
 				var h = document.getElementById(editorId).innerHTML;
 
-				return `<pre>${h}</pre>`;
+				return `<pre>${h.replace(/<br>/g, '\n')}</pre>`;
 			}
 
 			zss_editor.getTitleHTML = function() {
