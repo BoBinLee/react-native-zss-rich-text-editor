@@ -1432,8 +1432,14 @@
 
 				// Get the contents
 				var h = document.getElementById(editorId).innerHTML;
-
-				return `<pre>${h.replace(/<br>/g, '\n')}</pre>`;
+				var removedDivBr = h.replace(new RegExp("<div><br></div>", "g"), '<br>');
+				const hIndex = h.indexOf("<");
+				if(hIndex === 0) {
+					return h;
+				} else if(hIndex === -1) {
+					return `<div>${h}</div>`;
+				}
+				return `<div>${h.substring(0, hIndex)}</div>${h.substring(hIndex)}`;
 			}
 
 			zss_editor.getTitleHTML = function() {
