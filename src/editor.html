@@ -1392,7 +1392,7 @@
 			}
 
 			zss_editor.setContentHTML = function(html) {
-				setHTML('zss_editor_content', html);
+				setHTML('zss_editor_content', `<pre>${html}</pre>`);
 			}
 
 			zss_editor.insertHTML = function(html) {
