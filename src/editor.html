@@ -1392,7 +1392,7 @@
 			}
 
 			zss_editor.setContentHTML = function(html) {
-				setHTML('zss_editor_content', `<pre>${html}</pre>`);
+				setHTML('zss_editor_content', html);
 			}
 
 			zss_editor.insertHTML = function(html) {
@@ -1433,7 +1433,7 @@
 				// Get the contents
 				var h = document.getElementById(editorId).innerHTML;
 
-				return h.replace(/<br>/g, '');
+				return `<pre>${h.replace(/<br>/g, '')}</pre>`;
 			}
 
 			zss_editor.getTitleHTML = function() {
