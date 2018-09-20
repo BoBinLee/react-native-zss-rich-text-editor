@@ -947,17 +947,13 @@
 
 			function convertTextToHtmlWithLineBreaks(text) {
 				var html = encodeHtmlEntities(text);
-				return replaceNewlinesWithLineBreaks(html);
+				return html;
 			}
 
 			function encodeHtmlEntities(text) {
-				var paragraph = document.createElement('p');
+				var paragraph = document.createElement('pre');
 				paragraph.textContent = text;
 				return paragraph.innerHTML;
-			}
-
-			function replaceNewlinesWithLineBreaks(html) {
-				return html.replace(/\r?\n/g, '<br>');
 			}
 
 			zss_editor.updateOffset = function() {
@@ -1433,7 +1429,7 @@
 				// Get the contents
 				var h = document.getElementById(editorId).innerHTML;
 
-				return h;
+				return h.replace(/<br>/g, '');
 			}
 
 			zss_editor.getTitleHTML = function() {
