@@ -962,22 +962,22 @@
 
 			zss_editor.updateOffset = function() {
 
-				if (!zss_editor.updateScrollOffset)
-					return;
+				// if (!zss_editor.updateScrollOffset)
+				// 	return;
 
-				var offsetY = window.document.body.scrollTop;
+				// var offsetY = window.document.body.scrollTop;
 
-				var footer = document.getElementById('zss_editor_footer');
+				// var footer = document.getElementById('zss_editor_footer');
 
-				var maxOffsetY = footer.offsetTop + footer.offsetHeight - zss_editor.editorHeight;
+				// var maxOffsetY = footer.offsetTop + footer.offsetHeight - zss_editor.editorHeight;
 
-				if (maxOffsetY < 0)
-					maxOffsetY = 0;
+				// if (maxOffsetY < 0)
+				// 	maxOffsetY = 0;
 
-				if (offsetY > maxOffsetY)
-				{
-					window.scrollTo(0, maxOffsetY);
-				}
+				// if (offsetY > maxOffsetY)
+				// {
+				// 	window.scrollTo(0, maxOffsetY);
+				// }
 
 				zss_editor.setScrollPosition();
 			}
